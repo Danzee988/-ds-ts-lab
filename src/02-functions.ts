@@ -65,9 +65,9 @@ function sortColleagues(
   return fullResult.slice(0,end)
 }
 // Test invocations
-console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension),3));
-console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length),1));
-console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length)));
+// console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension),3));
+// console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length),1));
+// console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length)));
 
 function findFriends(friends: Friend[], criterion: (friend: Friend) => boolean): string[] {
   return friends.filter(criterion).map(friend => friend.name);
@@ -75,3 +75,18 @@ function findFriends(friends: Friend[], criterion: (friend: Friend) => boolean):
 
 // console.log(findFriends(friends, (friend) => friend.name.startsWith('Da')));
 // console.log(findFriends(friends, (friend) => friend.age < 35));
+
+function addInterest(friend: Friend, interest: string) {
+  // Initialize the interests array if it doesn't exist
+  if (!friend.interests) {
+    friend.interests = [];
+  }
+  
+  friend.interests.push(interest);
+
+  // Return the updated interests array
+  return friend.interests;
+}
+
+console.log(addInterest(friends[0], 'Politics'));
+console.log(addInterest(friends[1], 'Food'));
