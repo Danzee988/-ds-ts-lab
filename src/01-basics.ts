@@ -9,7 +9,7 @@ const friend1: Friend = {
   const friend2: Friend = {
     name: "Jan Biernacki",
     phone: "086--12345",
-    age: 31,
+    age: 33,
   };
   
   export const friends = [friend1, friend2];
