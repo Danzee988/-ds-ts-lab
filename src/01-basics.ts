@@ -9,11 +9,16 @@ interface ContactInfo {
     extension: number;
   }
   
-  interface Colleague {
+interface Colleague {
     name: string;
     department: string;
     contact: ContactInfo;
-  }
+    }
+
+interface ColleagueHistory {
+    current: Colleague[],
+    former: Colleague[]
+    }
 
 const friend1: Friend = {
     name: "David Beres",
